@@ -1,7 +1,7 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
-<main>
+<main id="main-container">
   <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
@@ -19,6 +19,7 @@
       <h2>Current Temp: <%=  ((weatherData.main.temp - 273.15) * 9/5 + 32).toFixed(2) %>°F</h2>
       <img src="https://openweathermap.org/img/wn/<%= weatherData.weather[0].icon %>@2x.png" alt="weather status icon">
     <% } %>
+    <a href="/weatherReadings">Previous Readings</a>
   <% } %>
 </main>
 

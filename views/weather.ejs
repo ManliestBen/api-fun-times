@@ -1,0 +1,14 @@
+<%- include('./partials/html-head') %>
+<%- include('./partials/nav') %>
+
+<main id="card-container">
+  <% weatherReadings.forEach(weatherData => { %>
+    <div class="weather-card">
+      <h1><%= weatherData.cityName %></h1>
+      <h2>Current Temp: <%=  ((weatherData.currentTempInK - 273.15) * 9/5 + 32).toFixed(2) %>°F</h2>
+      <img src="https://openweathermap.org/img/wn/<%= weatherData.weatherIcon %>@2x.png" alt="weather status icon">
+    </div>
+  <% }) %>
+</main>
+
+<%- include('./partials/footer') %>
