@@ -15,7 +15,9 @@
       <button type="submit">Get Weather</button>
     </form>
     <% if (weatherData) { %>
-      <h2>Current Temp: <%=  ((weatherData?.main.temp - 273.15) * 9/5 + 32).toFixed(2) %>°F</h2>
+      <h1>Weather Data For <%= weatherData.name %></h1>
+      <h2>Current Temp: <%=  ((weatherData.main.temp - 273.15) * 9/5 + 32).toFixed(2) %>°F</h2>
+      <img src="https://openweathermap.org/img/wn/<%= weatherData.weather[0].icon %>@2x.png" alt="weather status icon">
     <% } %>
   <% } %>
 </main>
