@@ -3,10 +3,12 @@ function getWeather(req, res) {
   .then(apiResponse => {
     apiResponse.json()
     .then(weatherData => {
-      console.log(weatherData)
+      res.render('index', {
+        weatherData,
+        title: 'Home Page'
+      })
     })
   })
-  res.redirect('/')
 }
 
 export {
